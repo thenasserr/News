@@ -28,6 +28,14 @@
 		D6B116C52BA7838B00017605 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116C42BA7838B00017605 /* AppRouter.swift */; };
 		D6B116C72BA783A300017605 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116C62BA783A300017605 /* Router.swift */; };
 		D6B116D02BA7871B00017605 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B116CF2BA7871B00017605 /* Colors.xcassets */; };
+		D6B116D62BA7B88E00017605 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116D12BA7B88E00017605 /* TabBarViewModel.swift */; };
+		D6B116D72BA7B88E00017605 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116D22BA7B88E00017605 /* TabBar.swift */; };
+		D6B116D82BA7B88E00017605 /* TabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116D32BA7B88E00017605 /* TabBarType.swift */; };
+		D6B116D92BA7B88E00017605 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116D42BA7B88E00017605 /* TabBarItem.swift */; };
+		D6B116DA2BA7B88E00017605 /* TabBarViewControlle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116D52BA7B88E00017605 /* TabBarViewControlle.swift */; };
+		D6B116DD2BA7B91000017605 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = D6B116DC2BA7B91000017605 /* MakeConstraints */; };
+		D6B116E02BA7C10600017605 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116DE2BA7C10600017605 /* HomeViewController.swift */; };
+		D6B116E12BA7C10600017605 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B116DF2BA7C10600017605 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +81,13 @@
 		D6B116C42BA7838B00017605 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		D6B116C62BA783A300017605 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D6B116CF2BA7871B00017605 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D6B116D12BA7B88E00017605 /* TabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		D6B116D22BA7B88E00017605 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		D6B116D32BA7B88E00017605 /* TabBarType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarType.swift; sourceTree = "<group>"; };
+		D6B116D42BA7B88E00017605 /* TabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		D6B116D52BA7B88E00017605 /* TabBarViewControlle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewControlle.swift; sourceTree = "<group>"; };
+		D6B116DE2BA7C10600017605 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D6B116DF2BA7C10600017605 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B116DD2BA7B91000017605 /* MakeConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +323,11 @@
 		D6B116C92BA7840200017605 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				D6B116D22BA7B88E00017605 /* TabBar.swift */,
+				D6B116D42BA7B88E00017605 /* TabBarItem.swift */,
+				D6B116D32BA7B88E00017605 /* TabBarType.swift */,
+				D6B116D52BA7B88E00017605 /* TabBarViewControlle.swift */,
+				D6B116D12BA7B88E00017605 /* TabBarViewModel.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -314,6 +335,8 @@
 		D6B116CB2BA7845100017605 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D6B116DE2BA7C10600017605 /* HomeViewController.swift */,
+				D6B116DF2BA7C10600017605 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -357,6 +380,9 @@
 			dependencies = (
 			);
 			name = News;
+			packageProductDependencies = (
+				D6B116DC2BA7B91000017605 /* MakeConstraints */,
+			);
 			productName = News;
 			productReference = D6B116682BA7806100017605 /* News.app */;
 			productType = "com.apple.product-type.application";
@@ -429,6 +455,9 @@
 				Base,
 			);
 			mainGroup = D6B1165F2BA7806100017605;
+			packageReferences = (
+				D6B116DB2BA7B91000017605 /* XCRemoteSwiftPackageReference "MakeConstraints" */,
+			);
 			productRefGroup = D6B116692BA7806100017605 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -450,6 +479,7 @@
 				D6B1167B2BA7806300017605 /* LaunchScreen.storyboard in Resources */,
 				D6B116D02BA7871B00017605 /* Colors.xcassets in Resources */,
 				D6B116B92BA7820300017605 /* Localizable.strings in Resources */,
+				D6B116E12BA7C10600017605 /* HomeViewController.xib in Resources */,
 				D6B116782BA7806300017605 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,18 +544,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B116D62BA7B88E00017605 /* TabBarViewModel.swift in Sources */,
 				D6B116AB2BA7818800017605 /* mainWindow.swift in Sources */,
 				D6B1166C2BA7806100017605 /* AppDelegate.swift in Sources */,
 				D6B116C32BA7837200017605 /* Coordinator.swift in Sources */,
 				D6B116C12BA782F200017605 /* Strings+Generated.swift in Sources */,
+				D6B116E02BA7C10600017605 /* HomeViewController.swift in Sources */,
 				D6B116C72BA783A300017605 /* Router.swift in Sources */,
+				D6B116D92BA7B88E00017605 /* TabBarItem.swift in Sources */,
+				D6B116D82BA7B88E00017605 /* TabBarType.swift in Sources */,
 				D6B116762BA7806100017605 /* News.xcdatamodeld in Sources */,
 				D6B116AE2BA781A100017605 /* +topMostViewController.swift in Sources */,
+				D6B116DA2BA7B88E00017605 /* TabBarViewControlle.swift in Sources */,
 				D6B1166E2BA7806100017605 /* SceneDelegate.swift in Sources */,
 				D6B116C52BA7838B00017605 /* AppRouter.swift in Sources */,
 				D6B116B12BA781B800017605 /* SectionsLayout.swift in Sources */,
 				D6B116A62BA7815000017605 /* Collection+.swift in Sources */,
 				D6B116A82BA7816E00017605 /* UICollectionVeiw+Extension.swift in Sources */,
+				D6B116D72BA7B88E00017605 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +900,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D6B116DB2BA7B91000017605 /* XCRemoteSwiftPackageReference "MakeConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ahmed-yamany/MakeConstraints";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D6B116DC2BA7B91000017605 /* MakeConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6B116DB2BA7B91000017605 /* XCRemoteSwiftPackageReference "MakeConstraints" */;
+			productName = MakeConstraints;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D6B116742BA7806100017605 /* News.xcdatamodeld */ = {

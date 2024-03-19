@@ -36,6 +36,10 @@
 		D6B116DD2BA7B91000017605 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = D6B116DC2BA7B91000017605 /* MakeConstraints */; };
 		D6B116E02BA7C10600017605 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116DE2BA7C10600017605 /* HomeViewController.swift */; };
 		D6B116E12BA7C10600017605 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B116DF2BA7C10600017605 /* HomeViewController.xib */; };
+		D6B116E92BA8DF3900017605 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116E82BA8DF3900017605 /* BaseAPI.swift */; };
+		D6B116EB2BA8E03C00017605 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116EA2BA8E03C00017605 /* EndPoint.swift */; };
+		D6B116ED2BA8E10100017605 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116EC2BA8E10100017605 /* APIRequest.swift */; };
+		D6B116F02BA9189000017605 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B116EF2BA9189000017605 /* NewsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,10 @@
 		D6B116D52BA7B88E00017605 /* TabBarViewControlle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewControlle.swift; sourceTree = "<group>"; };
 		D6B116DE2BA7C10600017605 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D6B116DF2BA7C10600017605 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		D6B116E82BA8DF3900017605 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		D6B116EA2BA8E03C00017605 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		D6B116EC2BA8E10100017605 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		D6B116EF2BA9189000017605 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,9 @@
 		D6B1166A2BA7806100017605 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				D6B116EE2BA9188600017605 /* Models */,
+				D6B116E72BA8DF1000017605 /* Network */,
+				D6B116E22BA8DE6A00017605 /* Managers */,
 				D6B1169E2BA780C100017605 /* Scenes */,
 				D6B1166B2BA7806100017605 /* AppDelegate.swift */,
 				D6B1166D2BA7806100017605 /* SceneDelegate.swift */,
@@ -362,6 +373,31 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		D6B116E22BA8DE6A00017605 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D6B116E72BA8DF1000017605 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D6B116E82BA8DF3900017605 /* BaseAPI.swift */,
+				D6B116EA2BA8E03C00017605 /* EndPoint.swift */,
+				D6B116EC2BA8E10100017605 /* APIRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D6B116EE2BA9188600017605 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D6B116EF2BA9189000017605 /* NewsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,13 +581,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6B116D62BA7B88E00017605 /* TabBarViewModel.swift in Sources */,
+				D6B116ED2BA8E10100017605 /* APIRequest.swift in Sources */,
 				D6B116AB2BA7818800017605 /* mainWindow.swift in Sources */,
+				D6B116EB2BA8E03C00017605 /* EndPoint.swift in Sources */,
 				D6B1166C2BA7806100017605 /* AppDelegate.swift in Sources */,
 				D6B116C32BA7837200017605 /* Coordinator.swift in Sources */,
+				D6B116F02BA9189000017605 /* NewsModel.swift in Sources */,
 				D6B116C12BA782F200017605 /* Strings+Generated.swift in Sources */,
 				D6B116E02BA7C10600017605 /* HomeViewController.swift in Sources */,
 				D6B116C72BA783A300017605 /* Router.swift in Sources */,
 				D6B116D92BA7B88E00017605 /* TabBarItem.swift in Sources */,
+				D6B116E92BA8DF3900017605 /* BaseAPI.swift in Sources */,
 				D6B116D82BA7B88E00017605 /* TabBarType.swift in Sources */,
 				D6B116762BA7806100017605 /* News.xcdatamodeld in Sources */,
 				D6B116AE2BA781A100017605 /* +topMostViewController.swift in Sources */,

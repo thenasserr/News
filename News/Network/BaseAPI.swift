@@ -15,24 +15,24 @@ enum Errors: Error {
     case failedToGetData
 }
 
-class APIService {
-    static let shared = APIService()
-    func fetchNews<T>(request: APIRequest, type: T.Type) -> AnyPublisher<T, Error> where T: Decodable {
+protocol BaseAPI {
+    func fetchNews<T>(request: APIRequest, type: T.Type) async throws -> T where T: Decodable
+}
+
+extension BaseAPI {
+
+    func fetchNews<T>(request: APIRequest, type: T.Type) async throws -> T where T: Decodable {
         guard let url = request.url else {
-            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+            throw URLError(.badURL)
         }
-        print(url)
+
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.httpMethod
         print(urlRequest)
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
-            .tryMap { data, _ in
-                guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
-                    throw Errors.invalidDecoding
-                }
-                return decodedData
-            }
-            .mapError { $0 as Error }
-            .eraseToAnyPublisher()
+        let (data, _) = try await URLSession.shared.data(for: urlRequest)
+        guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
+            throw Errors.invalidDecoding
+        }
+        return decodedData
     }
 }

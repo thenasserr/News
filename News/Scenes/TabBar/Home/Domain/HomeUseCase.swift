@@ -31,6 +31,11 @@ class HomeUseCase: HomeUseCaseProtocol {
             let layout = factory.createSection(type: .trendingMovies(breakingNews), delegate: delegate, title: L10n.Home.breakingNews)
             sections.append(layout)
         }
+        
+        let explore = Explore.mockData
+        let layout = factory.createSection(type: .explore(explore), delegate: delegate, title: "Explore")
+        sections.append(layout)
+        
         return sections
     }
 }

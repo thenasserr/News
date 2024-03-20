@@ -9,6 +9,7 @@ import Foundation
 
 enum SectionsTypes {
     case trendingMovies([Article])
+    case explore([Explore])
 }
 
 class HomeFactory {
@@ -17,6 +18,8 @@ class HomeFactory {
             
             case .trendingMovies(let news):
                 return BreakingNewsSection(items: news, delegate: delegate, sectionHeaderTitle: title)
+            case .explore(let explore):
+                return ExploreSection(items: explore, delegate: delegate, sectionHeaderTitle: title)
         }
     }
 }

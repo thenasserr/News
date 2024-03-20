@@ -57,6 +57,10 @@
 		D6B1171A2BAA6F3100017605 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B117192BAA6F3100017605 /* HomeCoordinator.swift */; };
 		D6B1171C2BAA6F6600017605 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B1171B2BAA6F6600017605 /* TabBarCoordinator.swift */; };
 		D6B1171E2BAA710100017605 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B1171D2BAA710100017605 /* AppCoordinator.swift */; };
+		D6B117222BAB403800017605 /* ExploreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B117202BAB403800017605 /* ExploreCollectionViewCell.swift */; };
+		D6B117232BAB403800017605 /* ExploreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B117212BAB403800017605 /* ExploreCollectionViewCell.xib */; };
+		D6B117252BAB412800017605 /* ExploreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B117242BAB412800017605 /* ExploreSection.swift */; };
+		D6B117282BAB4A1E00017605 /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = D6B117272BAB4A1E00017605 /* ViewAnimator */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +134,9 @@
 		D6B117192BAA6F3100017605 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		D6B1171B2BAA6F6600017605 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		D6B1171D2BAA710100017605 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D6B117202BAB403800017605 /* ExploreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionViewCell.swift; sourceTree = "<group>"; };
+		D6B117212BAB403800017605 /* ExploreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6B117242BAB412800017605 /* ExploreSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6B117282BAB4A1E00017605 /* ViewAnimator in Frameworks */,
 				D6B116DD2BA7B91000017605 /* MakeConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +481,7 @@
 		D6B116F62BA9F9D700017605 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D6B1171F2BAB401600017605 /* ExploreSection */,
 				D6B116F72BA9F9DF00017605 /* BreakingNewsSection */,
 			);
 			path = Sections;
@@ -513,6 +522,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D6B1171F2BAB401600017605 /* ExploreSection */ = {
+			isa = PBXGroup;
+			children = (
+				D6B117202BAB403800017605 /* ExploreCollectionViewCell.swift */,
+				D6B117212BAB403800017605 /* ExploreCollectionViewCell.xib */,
+				D6B117242BAB412800017605 /* ExploreSection.swift */,
+			);
+			path = ExploreSection;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -533,6 +552,7 @@
 			name = News;
 			packageProductDependencies = (
 				D6B116DC2BA7B91000017605 /* MakeConstraints */,
+				D6B117272BAB4A1E00017605 /* ViewAnimator */,
 			);
 			productName = News;
 			productReference = D6B116682BA7806100017605 /* News.app */;
@@ -608,6 +628,7 @@
 			mainGroup = D6B1165F2BA7806100017605;
 			packageReferences = (
 				D6B116DB2BA7B91000017605 /* XCRemoteSwiftPackageReference "MakeConstraints" */,
+				D6B117262BAB4A1E00017605 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
 			);
 			productRefGroup = D6B116692BA7806100017605 /* Products */;
 			projectDirPath = "";
@@ -630,6 +651,7 @@
 				D6B1170E2BAA4C4600017605 /* Poppins-Medium.ttf in Resources */,
 				D6B1170F2BAA4C4600017605 /* Poppins-Regular.ttf in Resources */,
 				D6B117062BAA4C2400017605 /* HeaderCollectionReusableView.xib in Resources */,
+				D6B117232BAB403800017605 /* ExploreCollectionViewCell.xib in Resources */,
 				D6B116FB2BA9F9FA00017605 /* BreakingNewsCollectionViewCell.xib in Resources */,
 				D6B1167B2BA7806300017605 /* LaunchScreen.storyboard in Resources */,
 				D6B1170D2BAA4C4600017605 /* Poppins-SemiBold.ttf in Resources */,
@@ -715,6 +737,7 @@
 				D6B116C72BA783A300017605 /* Router.swift in Sources */,
 				D6B116D92BA7B88E00017605 /* TabBarItem.swift in Sources */,
 				D6B117162BAA4D7000017605 /* HomeViewModel.swift in Sources */,
+				D6B117222BAB403800017605 /* ExploreCollectionViewCell.swift in Sources */,
 				D6B116E92BA8DF3900017605 /* BaseAPI.swift in Sources */,
 				D6B117012BAA47EB00017605 /* BreakingNewsSection.swift in Sources */,
 				D6B116D82BA7B88E00017605 /* TabBarType.swift in Sources */,
@@ -726,6 +749,7 @@
 				D6B116FF2BAA472C00017605 /* UIImageView+Ext.swift in Sources */,
 				D6B116AE2BA781A100017605 /* +topMostViewController.swift in Sources */,
 				D6B117072BAA4C2400017605 /* HeaderCollectionReusableView.swift in Sources */,
+				D6B117252BAB412800017605 /* ExploreSection.swift in Sources */,
 				D6B116DA2BA7B88E00017605 /* TabBarViewControlle.swift in Sources */,
 				D6B1166E2BA7806100017605 /* SceneDelegate.swift in Sources */,
 				D6B116C52BA7838B00017605 /* AppRouter.swift in Sources */,
@@ -1082,6 +1106,14 @@
 				kind = branch;
 			};
 		};
+		D6B117262BAB4A1E00017605 /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1089,6 +1121,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D6B116DB2BA7B91000017605 /* XCRemoteSwiftPackageReference "MakeConstraints" */;
 			productName = MakeConstraints;
+		};
+		D6B117272BAB4A1E00017605 /* ViewAnimator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6B117262BAB4A1E00017605 /* XCRemoteSwiftPackageReference "ViewAnimator" */;
+			productName = ViewAnimator;
 		};
 /* End XCSwiftPackageProductDependency section */
 

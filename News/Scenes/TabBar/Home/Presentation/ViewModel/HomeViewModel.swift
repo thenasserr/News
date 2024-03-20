@@ -7,30 +7,42 @@
 
 import Foundation
 
-typealias HomeSectionsDelegate = BreakingNewsSectionDelegate & ExploreSectionDelegate
+typealias HomeSectionsDelegate = BreakingNewsSectionDelegate & ExploreSectionDelegate & TechSectionDelegate
 
 class HomeViewModel {
     
     // MARK: - Properties
     private let useCase: HomeUseCase
+    private let coordinator: HomeCoordinatorProtocol
     
     // MARK: - Initialization
-    init(useCase: HomeUseCase) {
+    init(useCase: HomeUseCase, coordinator: HomeCoordinatorProtocol) {
         self.useCase = useCase
+        self.coordinator = coordinator
     }
     
     func getSections() async throws -> [any SectionsLayout] {
         return try await useCase.getSectionLayouts(delegate: self)
     }
+    
+    func viewWillAppear() {
+        coordinator.showTabBar()
+    }
 }
 
 // MARK: - HomeViewModel Sections Delegate Methods
 extension HomeViewModel: HomeSectionsDelegate {
+    func techSection(_ section: TechSection, didSelect item: Article) {
+        coordinator.showDetails(new: item)
+        coordinator.hideTabBar()
+    }
+    
     func exploreSection(_ section: ExploreSection, didSelect item: Explore) {
         print(item)
     }
     
     func breakingNewsSection(_ section: BreakingNewsSection, didSelect item: Article) {
-        print(item)
+        coordinator.showDetails(new: item)
+        coordinator.hideTabBar()
     }
 }

@@ -33,9 +33,14 @@ class HomeUseCase: HomeUseCaseProtocol {
         }
         
         let explore = Explore.mockData
-        let layout = factory.createSection(type: .explore(explore), delegate: delegate, title: "Explore")
+        let layout = factory.createSection(type: .explore(explore), delegate: delegate, title: L10n.Home.explore)
         sections.append(layout)
         
+        let techNews = try await newsAPI.techNews()
+        if let techNews = techNews?.articles {
+            let layout = factory.createSection(type: .tech(techNews), delegate: delegate, title: L10n.Home.tech)
+            sections.append(layout)
+        }
         return sections
     }
 }

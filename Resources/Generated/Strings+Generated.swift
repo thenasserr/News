@@ -17,7 +17,11 @@ internal enum L10n {
   internal static let home = L10n.tr("Localizable", "home", fallback: "Home")
   internal enum Home {
     /// Breaking News
-    internal static let breakingNews = L10n.tr("Localizable", "Home.breakingNews", fallback: "Breaking News")
+    internal static let breakingNews = L10n.tr("Localizable", "home.breakingNews", fallback: "Breaking News")
+    /// Explore
+    internal static let explore = L10n.tr("Localizable", "home.explore", fallback: "Explore")
+    /// Tech News
+    internal static let tech = L10n.tr("Localizable", "home.tech", fallback: "Tech News")
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

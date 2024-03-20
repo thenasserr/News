@@ -6,4 +6,7 @@
   
 */
 "home" = "Home";
-"Home.breakingNews" = "Breaking News";
+"home.breakingNews" = "Breaking News";
+"home.explore" = "Explore";
+"home.tech" = "Tech News";
+

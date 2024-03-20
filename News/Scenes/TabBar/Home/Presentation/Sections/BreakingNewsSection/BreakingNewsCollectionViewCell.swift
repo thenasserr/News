@@ -24,7 +24,7 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
         let imageURL = new.urlToImage ?? ""
         titleImage.load(urlString: imageURL)
         name.text = new.source.name
-        publishedDate.text = convertDateStringToDate(new.publishedAt)
+        publishedDate.text = new.publishedAt.convertDateStringToDate()
         descriptionLabel.text = new.description
     }
     
@@ -44,21 +44,5 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
         descriptionLabel.textColor = .black
         descriptionLabel.font = .regular
         
-    }
-    
-    func convertDateStringToDate(_ dateString: String) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        
-        if let date = dateFormatter.date(from: dateString) {
-            dateFormatter.dateFormat = "MMM dd, yyyy"
-            dateFormatter.timeZone = TimeZone.current
-            
-            return dateFormatter.string(from: date)
-        } else {
-            print("Invalid date format")
-            return nil
-        }
     }
 }

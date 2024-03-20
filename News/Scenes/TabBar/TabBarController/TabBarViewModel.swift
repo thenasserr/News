@@ -26,6 +26,5 @@ class PTabBarViewModel: ObservableObject, PTabBarViewModelInterface {
     
     @Published var selectedTab: PTabBarType = .home
     var selectedTabPublisher: Published<PTabBarType>.Publisher { $selectedTab }
-    
-    var viewControllers: [UIViewController] = [HomeViewController()]
+    var viewControllers: [UIViewController] = []
 }

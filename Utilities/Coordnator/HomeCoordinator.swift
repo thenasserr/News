@@ -39,12 +39,13 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     func showHome() {
         let factory = HomeFactory()
         let useCase = HomeUseCase(factory: factory)
-        let viewModel = HomeViewModel(useCase: useCase)
+        let viewModel = HomeViewModel(useCase: useCase, coordinator: self)
         let vcc = HomeViewController(viewModel: viewModel)
         router.push(vcc)
     }
     
     func showDetails(new: Article) {
-        
+        let coordinator = NewsDetailsCoordinator(router: router)
+        coordinator.showDetails(new: new)
     }
 }

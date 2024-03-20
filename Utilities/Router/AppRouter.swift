@@ -13,7 +13,12 @@ public final class AppRouter {
     public required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         navigationController.navigationBar.tintColor = .black
+        navigationController.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        navigationController
+            .navigationBar
+            .backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
     }
+    
 }
 
 extension AppRouter: Router {

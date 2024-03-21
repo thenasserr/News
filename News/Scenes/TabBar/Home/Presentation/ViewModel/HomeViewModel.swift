@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias HomeSectionsDelegate = BreakingNewsSectionDelegate & ExploreSectionDelegate & TechSectionDelegate
+typealias HomeSectionsDelegate = BreakingNewsSectionDelegate & ExploreSectionDelegate & TechSectionDelegate & PoliticsSectionDelegate
 
 class HomeViewModel {
     
@@ -32,6 +32,11 @@ class HomeViewModel {
 
 // MARK: - HomeViewModel Sections Delegate Methods
 extension HomeViewModel: HomeSectionsDelegate {
+    func politicsSection(_ section: PoliticsSection, didSelect item: Article) {
+        coordinator.showDetails(new: item)
+        coordinator.hideTabBar()
+    }
+    
     func techSection(_ section: TechSection, didSelect item: Article) {
         coordinator.showDetails(new: item)
         coordinator.hideTabBar()

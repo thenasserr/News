@@ -28,24 +28,16 @@ class TechCollectionViewCell: UICollectionViewCell {
     
     private func configureUI() {
         clipsToBounds = false
-        configureNewsContainerUI()
+        titleImage.layer.cornerRadius = 10
         configureLabelsUI()
     }
     
-    private func configureNewsContainerUI() {
-        newsContainer.backgroundColor = .nlightercolor
-        newsContainer.isLayoutMarginsRelativeArrangement = true
-        newsContainer.layoutMargins = .init(top: 5, left: 5, bottom: 5, right: 5)
-        contentView.layer.cornerRadius = 10
-        contentView.clipsToBounds = true
-    }
-    
     private func configureLabelsUI() {
-        nameLabel.textColor = .black
+        nameLabel.textColor = .nprimarycolor
         nameLabel.font = .h3
         
-        descriptionLabel.textColor = .black
-        descriptionLabel.font = .medium
+        descriptionLabel.textColor = .darkGray
+        descriptionLabel.font = .regular
         
     }
 }

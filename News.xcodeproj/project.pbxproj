@@ -14,6 +14,9 @@
 		D660E6782BAB8E7400C897FC /* TechCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6762BAB8E7400C897FC /* TechCollectionViewCell.swift */; };
 		D660E6792BAB8E7400C897FC /* TechCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D660E6772BAB8E7400C897FC /* TechCollectionViewCell.xib */; };
 		D660E67B2BAB8F8300C897FC /* TechSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E67A2BAB8F8300C897FC /* TechSection.swift */; };
+		D660E6802BAB98E800C897FC /* PoliticsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E67E2BAB98E800C897FC /* PoliticsCollectionViewCell.swift */; };
+		D660E6812BAB98E800C897FC /* PoliticsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D660E67F2BAB98E800C897FC /* PoliticsCollectionViewCell.xib */; };
+		D660E6832BAB9B1300C897FC /* PoliticsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6822BAB9B1300C897FC /* PoliticsSection.swift */; };
 		D6B1166C2BA7806100017605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B1166B2BA7806100017605 /* AppDelegate.swift */; };
 		D6B1166E2BA7806100017605 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B1166D2BA7806100017605 /* SceneDelegate.swift */; };
 		D6B116762BA7806100017605 /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6B116742BA7806100017605 /* News.xcdatamodeld */; };
@@ -95,6 +98,9 @@
 		D660E6762BAB8E7400C897FC /* TechCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechCollectionViewCell.swift; sourceTree = "<group>"; };
 		D660E6772BAB8E7400C897FC /* TechCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TechCollectionViewCell.xib; sourceTree = "<group>"; };
 		D660E67A2BAB8F8300C897FC /* TechSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechSection.swift; sourceTree = "<group>"; };
+		D660E67E2BAB98E800C897FC /* PoliticsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D660E67F2BAB98E800C897FC /* PoliticsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PoliticsCollectionViewCell.xib; sourceTree = "<group>"; };
+		D660E6822BAB9B1300C897FC /* PoliticsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliticsSection.swift; sourceTree = "<group>"; };
 		D6B116682BA7806100017605 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B1166B2BA7806100017605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6B1166D2BA7806100017605 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +211,16 @@
 				D660E67A2BAB8F8300C897FC /* TechSection.swift */,
 			);
 			path = TechSection;
+			sourceTree = "<group>";
+		};
+		D660E67C2BAB979200C897FC /* Politics Section */ = {
+			isa = PBXGroup;
+			children = (
+				D660E67E2BAB98E800C897FC /* PoliticsCollectionViewCell.swift */,
+				D660E67F2BAB98E800C897FC /* PoliticsCollectionViewCell.xib */,
+				D660E6822BAB9B1300C897FC /* PoliticsSection.swift */,
+			);
+			path = "Politics Section";
 			sourceTree = "<group>";
 		};
 		D6B1165F2BA7806100017605 = {
@@ -525,6 +541,7 @@
 		D6B116F62BA9F9D700017605 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D660E67C2BAB979200C897FC /* Politics Section */,
 				D660E6752BAB8E5400C897FC /* TechSection */,
 				D6B1171F2BAB401600017605 /* ExploreSection */,
 				D6B116F72BA9F9DF00017605 /* BreakingNewsSection */,
@@ -704,6 +721,7 @@
 				D660E6792BAB8E7400C897FC /* TechCollectionViewCell.xib in Resources */,
 				D6B116D02BA7871B00017605 /* Colors.xcassets in Resources */,
 				D660E66F2BAB7ADD00C897FC /* NewViewController.xib in Resources */,
+				D660E6812BAB98E800C897FC /* PoliticsCollectionViewCell.xib in Resources */,
 				D6B116B92BA7820300017605 /* Localizable.strings in Resources */,
 				D6B116782BA7806300017605 /* Assets.xcassets in Resources */,
 			);
@@ -799,11 +817,13 @@
 				D6B116FF2BAA472C00017605 /* UIImageView+Ext.swift in Sources */,
 				D6B116AE2BA781A100017605 /* +topMostViewController.swift in Sources */,
 				D6B117072BAA4C2400017605 /* HeaderCollectionReusableView.swift in Sources */,
+				D660E6802BAB98E800C897FC /* PoliticsCollectionViewCell.swift in Sources */,
 				D6B117252BAB412800017605 /* ExploreSection.swift in Sources */,
 				D6B116DA2BA7B88E00017605 /* TabBarViewControlle.swift in Sources */,
 				D6B1166E2BA7806100017605 /* SceneDelegate.swift in Sources */,
 				D6B116C52BA7838B00017605 /* AppRouter.swift in Sources */,
 				D660E6722BAB82EB00C897FC /* String+Ext.swift in Sources */,
+				D660E6832BAB9B1300C897FC /* PoliticsSection.swift in Sources */,
 				D6B116B12BA781B800017605 /* SectionsLayout.swift in Sources */,
 				D6B116A62BA7815000017605 /* Collection+.swift in Sources */,
 				D6B1171A2BAA6F3100017605 /* HomeCoordinator.swift in Sources */,

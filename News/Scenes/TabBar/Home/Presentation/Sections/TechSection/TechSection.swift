@@ -36,13 +36,19 @@ class TechSection: SectionsLayout {
         layoutEnvironment: NSCollectionLayoutEnvironment
     ) -> NSCollectionLayoutSection {
         // Item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let itemSize =  NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .fractionalHeight(0.5))
+        
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .absolute(150))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90),
+                                               heightDimension: .estimated(230))
         
+        let group =  NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
+                                                      subitem: item,
+                                                      count: 3)
+        group.interItemSpacing = .fixed(8)
         let header = createHeader()
         
         // Section
@@ -50,7 +56,7 @@ class TechSection: SectionsLayout {
         section.interGroupSpacing = 15
         section.contentInsets = .init(top: 0, leading: 20, bottom: 20, trailing: 20)
         section.boundarySupplementaryItems = [header]
-        section.orthogonalScrollingBehavior = .groupPaging
+        section.orthogonalScrollingBehavior = .groupPagingCentered
         return section
     }
     

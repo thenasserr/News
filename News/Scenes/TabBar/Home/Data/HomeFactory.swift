@@ -11,6 +11,7 @@ enum SectionsTypes {
     case trendingMovies([Article])
     case explore([Explore])
     case tech([Article])
+    case politics([Article])
 }
 
 class HomeFactory {
@@ -23,6 +24,8 @@ class HomeFactory {
                 return ExploreSection(items: explore, delegate: delegate, sectionHeaderTitle: title)
             case .tech(let news):
                 return TechSection(items: news, delegate: delegate, sectionHeaderTitle: title)
+            case .politics(let news):
+                return PoliticsSection(items: news, delegate: delegate, sectionHeaderTitle: title)
         }
     }
 }

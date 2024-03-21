@@ -41,6 +41,12 @@ class HomeUseCase: HomeUseCaseProtocol {
             let layout = factory.createSection(type: .tech(techNews), delegate: delegate, title: L10n.Home.tech)
             sections.append(layout)
         }
+        
+        let politicsNews = try await newsAPI.politicsNews()
+        if let politicsNews = politicsNews?.articles {
+            let layout = factory.createSection(type: .politics(politicsNews), delegate: delegate, title: L10n.Home.politics)
+            sections.append(layout)
+        }
         return sections
     }
 }

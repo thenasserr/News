@@ -10,6 +10,7 @@ import Foundation
 protocol NewsAPI: BaseAPI {
     func topHeadLines() async throws -> NewsModelResponse?
     func techNews() async throws -> NewsModelResponse?
+    func politicsNews() async throws -> NewsModelResponse?
 }
 
 struct NewsAPIService: NewsAPI {
@@ -19,5 +20,9 @@ struct NewsAPIService: NewsAPI {
     
     func techNews() async throws -> NewsModelResponse? {
         try await fetchNews(request: APIRequest(endpoint: .tech, query: nil), type: NewsModelResponse.self)
+    }
+    
+    func politicsNews() async throws -> NewsModelResponse? {
+        try await fetchNews(request: APIRequest(endpoint: .politics, query: nil), type: NewsModelResponse.self)
     }
 }

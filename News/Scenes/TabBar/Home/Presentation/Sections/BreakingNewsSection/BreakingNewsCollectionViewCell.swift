@@ -35,13 +35,13 @@ class BreakingNewsCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureLabelsUI() {
-        name.textColor = .darkGray
+        name.textColor = .nprimarycolor
         name.font = .h3
         
-        publishedDate.textColor = .darkGray
+        publishedDate.textColor = .nprimarycolor
         publishedDate.font = .h3
         
-        descriptionLabel.textColor = .black
+        descriptionLabel.textColor = .darkGray
         descriptionLabel.font = .regular
         
     }

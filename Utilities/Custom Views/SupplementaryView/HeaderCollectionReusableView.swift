@@ -18,6 +18,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     // MARK: - IBOutlets
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var countLabel: UILabel!
     
     weak var delegate: HeaderCollectionReusableViewDelegate?
     
@@ -45,6 +46,9 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         titleLabel.font = .h2
         titleLabel.textColor = .black
         
+        countLabel.font = .regular
+        countLabel.textColor = .nsecondarycolor
+        
         if #available(iOS 15.0, *) {
             button.configuration = nil
             button.setTitleColor(.nsecondarycolor, for: .normal)
@@ -66,6 +70,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     /// - Parameter buttonTitle: The title to be displayed on the button.
     func setupHeaderButtonTitle(buttonTitle: String) {
         button.setTitle(buttonTitle, for: .normal)
+    }
+    
+    func setupHeaderCount(count: String) {
+        countLabel.text = "+\(count)"
     }
     
     @IBAction func viewAllButtonTapped(_ sender: UIButton) {

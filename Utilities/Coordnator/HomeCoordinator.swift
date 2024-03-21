@@ -10,6 +10,7 @@ import UIKit
 protocol HomeCoordinatorProtocol: Coordinator {
     func showHome()
     func showDetails(new: Article)
+    func showAllNews(news: [Article], title: String)
     func showTabBar()
     func hideTabBar()
 }
@@ -47,5 +48,10 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     func showDetails(new: Article) {
         let coordinator = NewsDetailsCoordinator(router: router)
         coordinator.showDetails(new: new)
+    }
+    
+    func showAllNews(news: [Article], title: String) {
+        let coordinator = AllNewsCoordinator(router: router)
+        coordinator.showAllNews(news: news, title: title)
     }
 }

@@ -32,6 +32,21 @@ class HomeViewModel {
 
 // MARK: - HomeViewModel Sections Delegate Methods
 extension HomeViewModel: HomeSectionsDelegate {
+    func techNewsSeeAllButtonTapped(_ section: TechSection, items: [Article], title: String) {
+        coordinator.showAllNews(news: items, title: title)
+        coordinator.hideTabBar()
+    }
+    
+    func politicsNewsSeeAllButtonTapped(_ section: PoliticsSection, items: [Article], title: String) {
+        coordinator.showAllNews(news: items, title: title)
+        coordinator.hideTabBar()
+    }
+    
+    func breakingNewsSeeAllButtonTapped(_ section: BreakingNewsSection, items: [Article], title: String) {
+        coordinator.showAllNews(news: items, title: title)
+        coordinator.hideTabBar()
+    }
+    
     func politicsSection(_ section: PoliticsSection, didSelect item: Article) {
         coordinator.showDetails(new: item)
         coordinator.hideTabBar()

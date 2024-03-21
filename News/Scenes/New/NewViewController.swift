@@ -84,6 +84,7 @@ class NewViewController: UIViewController {
     }
     
     private func addingRightBarButtonItems() {
+        navigationItem.backButtonTitle = ""
         let bookmarkButton = UIBarButtonItem(
             image: UIImage(systemName: "bookmark"),
             style: .done,

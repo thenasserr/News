@@ -9,6 +9,7 @@ import UIKit
 
 protocol PoliticsSectionDelegate: AnyObject {
     func politicsSection(_ section: PoliticsSection, didSelect item: Article)
+    func politicsNewsSeeAllButtonTapped(_ section: PoliticsSection, items: [Article], title: String)
 }
 
 class PoliticsSection: SectionsLayout {
@@ -86,25 +87,6 @@ class PoliticsSection: SectionsLayout {
         delegate?.politicsSection(self, didSelect: item)
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        contextMenuConfigurationForItemAt indexPath: IndexPath,
-                        point: CGPoint) -> UIContextMenuConfiguration? {
-        let config = UIContextMenuConfiguration(
-            identifier: nil,
-            previewProvider: nil) { _ in
-                let downloadAction = UIAction(title: "Download",
-                                              subtitle: nil,
-                                              image: UIImage(systemName: "square.and.arrow.down"),
-                                              identifier: nil,
-                                              discoverabilityTitle: nil, state: .off) { _ in
-                    print("Downloaded")
-                }
-                return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
-            }
-        
-        return config
-    }
-    
     func collectionView(
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
@@ -118,6 +100,9 @@ class PoliticsSection: SectionsLayout {
             return UICollectionReusableView()
         }
         header.setupHeaderTitle(title: sectionHeaderTitle)
+        header.setupHeaderButtonTitle(buttonTitle: "See All")
+        header.setupHeaderCount(count: "\(items.count - 15)")
+        header.delegate = self
         return header
     }
     
@@ -133,5 +118,11 @@ class PoliticsSection: SectionsLayout {
     
     func registerDecorationView(layout: UICollectionViewLayout) {
         
+    }
+}
+
+extension PoliticsSection: HeaderCollectionReusableViewDelegate {
+    func headerCollectionReusableViewButtonTapped() {
+        delegate?.politicsNewsSeeAllButtonTapped(self, items: items, title: sectionHeaderTitle)
     }
 }

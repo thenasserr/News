@@ -97,7 +97,8 @@ class ExploreSection: SectionsLayout {
             return UICollectionReusableView()
         }
         header.setupHeaderTitle(title: sectionHeaderTitle)
-        header.setupHeaderButtonTitle(buttonTitle: "See All")
+        header.setupHeaderButtonTitle(buttonTitle: "")
+        header.countLabel.text = ""
         return header
     }
     

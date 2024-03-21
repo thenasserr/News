@@ -30,7 +30,7 @@ struct Explore: Codable {
 }
 
 extension Explore {
-    static let mockData: [Explore] = [
+    static let mockData: [Explore]? = [
         .init(title: "Politics", image: "explore/1"),
         .init(title: "Tech", image: "explore/2"),
         .init(title: "Sport", image: "explore/3"),

@@ -9,6 +9,7 @@ import UIKit
 
 protocol BreakingNewsSectionDelegate: AnyObject {
     func breakingNewsSection(_ section: BreakingNewsSection, didSelect item: Article)
+    func breakingNewsSeeAllButtonTapped(_ section: BreakingNewsSection, items: [Article], title: String)
 }
 
 class BreakingNewsSection: SectionsLayout {
@@ -28,7 +29,7 @@ class BreakingNewsSection: SectionsLayout {
     }
     
     func numberOfItems() -> Int {
-        items.count
+        return 6
     }
     
     func sectionLayout(
@@ -97,6 +98,8 @@ class BreakingNewsSection: SectionsLayout {
         }
         header.setupHeaderTitle(title: sectionHeaderTitle)
         header.setupHeaderButtonTitle(buttonTitle: "See All")
+        header.setupHeaderCount(count: "\(items.count - 6)")
+        header.delegate = self
         return header
     }
     
@@ -112,5 +115,11 @@ class BreakingNewsSection: SectionsLayout {
     
     func registerDecorationView(layout: UICollectionViewLayout) {
         
+    }
+}
+
+extension BreakingNewsSection: HeaderCollectionReusableViewDelegate {
+    func headerCollectionReusableViewButtonTapped() {
+        delegate?.breakingNewsSeeAllButtonTapped(self, items: items, title: sectionHeaderTitle)
     }
 }

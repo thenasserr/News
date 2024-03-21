@@ -9,6 +9,7 @@ import UIKit
 
 protocol TechSectionDelegate: AnyObject {
     func techSection(_ section: TechSection, didSelect item: Article)
+    func techNewsSeeAllButtonTapped(_ section: TechSection, items: [Article], title: String)
 }
 
 class TechSection: SectionsLayout {
@@ -28,7 +29,7 @@ class TechSection: SectionsLayout {
     }
     
     func numberOfItems() -> Int {
-        items.count
+        return 12
     }
     
     func sectionLayout(
@@ -43,12 +44,12 @@ class TechSection: SectionsLayout {
         
         // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.90),
-                                               heightDimension: .estimated(230))
+                                               heightDimension: .estimated(240))
         
         let group =  NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
                                                       subitem: item,
                                                       count: 3)
-        group.interItemSpacing = .fixed(8)
+        group.interItemSpacing = .fixed(15)
         let header = createHeader()
         
         // Section
@@ -103,6 +104,8 @@ class TechSection: SectionsLayout {
         }
         header.setupHeaderTitle(title: sectionHeaderTitle)
         header.setupHeaderButtonTitle(buttonTitle: "See All")
+        header.setupHeaderCount(count: "\(items.count - 12)")
+        header.delegate = self
         return header
     }
     
@@ -118,5 +121,11 @@ class TechSection: SectionsLayout {
     
     func registerDecorationView(layout: UICollectionViewLayout) {
         
+    }
+}
+
+extension TechSection: HeaderCollectionReusableViewDelegate {
+    func headerCollectionReusableViewButtonTapped() {
+        delegate?.techNewsSeeAllButtonTapped(self, items: items, title: sectionHeaderTitle)
     }
 }

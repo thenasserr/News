@@ -28,13 +28,14 @@ class HomeUseCase: HomeUseCaseProtocol {
         var sections: [any SectionsLayout] = []
         
         if let breakingNews = breakingNews?.articles {
-            let layout = factory.createSection(type: .trendingMovies(breakingNews), delegate: delegate, title: L10n.Home.breakingNews)
+            let layout = factory.createSection(type: .breakingNews(breakingNews), delegate: delegate, title: L10n.Home.breakingNews)
             sections.append(layout)
         }
         
-        let explore = Explore.mockData
-        let layout = factory.createSection(type: .explore(explore), delegate: delegate, title: L10n.Home.explore)
-        sections.append(layout)
+        if let explore = Explore.mockData {
+            let layout = factory.createSection(type: .explore(explore), delegate: delegate, title: L10n.Home.explore)
+            sections.append(layout)
+        }
         
         let techNews = try await newsAPI.techNews()
         if let techNews = techNews?.articles {

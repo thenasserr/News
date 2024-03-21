@@ -8,7 +8,7 @@
 import Foundation
 
 enum SectionsTypes {
-    case trendingMovies([Article])
+    case breakingNews([Article])
     case explore([Explore])
     case tech([Article])
     case politics([Article])
@@ -18,7 +18,7 @@ class HomeFactory {
     func createSection(type: SectionsTypes, delegate: HomeSectionsDelegate, title: String) -> any SectionsLayout {
         switch type {
             
-            case .trendingMovies(let news):
+            case .breakingNews(let news):
                 return BreakingNewsSection(items: news, delegate: delegate, sectionHeaderTitle: title)
             case .explore(let explore):
                 return ExploreSection(items: explore, delegate: delegate, sectionHeaderTitle: title)

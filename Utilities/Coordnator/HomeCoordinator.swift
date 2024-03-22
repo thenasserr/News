@@ -51,7 +51,7 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     }
     
     func showAllNews(news: [Article], title: String) {
-        let coordinator = AllNewsCoordinator(router: router)
+        let coordinator = AllNewsCoordinator(router: router, tabBarCoordinator: tabBarCoordinator)
         coordinator.showAllNews(news: news, title: title)
     }
 }

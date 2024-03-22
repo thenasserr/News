@@ -23,4 +23,19 @@ extension String {
             return nil
         }
     }
+    
+    func formatDate() -> String? {
+        let isoDateFormatter = ISO8601DateFormatter()
+        
+        if let date = isoDateFormatter.date(from: self) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US")
+            dateFormatter.dateFormat = "HH:mm"
+            let formattedDate = dateFormatter.string(from: date)
+            
+            return formattedDate
+            
+        }
+        return nil
+    }
 }

@@ -10,6 +10,7 @@ import UIKit
 enum PTabBarType: Int, CaseIterable, Hashable {
     case home = 0
     case saved
+    case notifications
     case search
     case settings
     
@@ -17,6 +18,7 @@ enum PTabBarType: Int, CaseIterable, Hashable {
         switch self {
             case .home: "Home"
             case .saved: "Favorite"
+            case .notifications: "Notifications"
             case .search: "Cart"
             case .settings: "Profile"
         }
@@ -28,6 +30,8 @@ enum PTabBarType: Int, CaseIterable, Hashable {
                 return .home.withRenderingMode(.alwaysOriginal)
             case .saved:
                 return .save.withRenderingMode(.alwaysOriginal)
+            case .notifications:
+                return .notif.withRenderingMode(.alwaysOriginal)
             case .search:
                 return .search.withRenderingMode(.alwaysOriginal)
             case .settings:

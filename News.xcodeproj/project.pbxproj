@@ -23,6 +23,17 @@
 		D660E68E2BAC808A00C897FC /* AllNewsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E68D2BAC808A00C897FC /* AllNewsSection.swift */; };
 		D660E6902BAC8FD400C897FC /* AllNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E68F2BAC8FD400C897FC /* AllNewsViewModel.swift */; };
 		D660E6922BAC99A200C897FC /* AllNewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6912BAC99A200C897FC /* AllNewsCoordinator.swift */; };
+		D660E6982BACA99C00C897FC /* NotificationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6972BACA99C00C897FC /* NotificationsUseCase.swift */; };
+		D660E69D2BACA9EE00C897FC /* NotificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E69B2BACA9EE00C897FC /* NotificationCollectionViewCell.swift */; };
+		D660E69E2BACA9EE00C897FC /* NotificationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D660E69C2BACA9EE00C897FC /* NotificationCollectionViewCell.xib */; };
+		D660E6A02BACA9F500C897FC /* NotificationsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E69F2BACA9F500C897FC /* NotificationsSection.swift */; };
+		D660E6A32BACAE0000C897FC /* NotificationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6A22BACAE0000C897FC /* NotificationsCoordinator.swift */; };
+		D660E6A52BACAE6700C897FC /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6A42BACAE6700C897FC /* NotificationsViewModel.swift */; };
+		D660E6A72BACAEFE00C897FC /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6A62BACAEFE00C897FC /* NotificationsViewController.swift */; };
+		D660E6AC2BACD00900C897FC /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6AB2BACD00900C897FC /* NewViewModel.swift */; };
+		D660E6AE2BACFF4600C897FC /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6AD2BACFF4600C897FC /* SavedViewController.swift */; };
+		D660E6B02BACFF6600C897FC /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6AF2BACFF6600C897FC /* SavedViewModel.swift */; };
+		D660E6B22BAD00A300C897FC /* SavedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6B12BAD00A200C897FC /* SavedCoordinator.swift */; };
 		D6B1166C2BA7806100017605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B1166B2BA7806100017605 /* AppDelegate.swift */; };
 		D6B1166E2BA7806100017605 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B1166D2BA7806100017605 /* SceneDelegate.swift */; };
 		D6B116762BA7806100017605 /* News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D6B116742BA7806100017605 /* News.xcdatamodeld */; };
@@ -113,6 +124,17 @@
 		D660E68D2BAC808A00C897FC /* AllNewsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsSection.swift; sourceTree = "<group>"; };
 		D660E68F2BAC8FD400C897FC /* AllNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsViewModel.swift; sourceTree = "<group>"; };
 		D660E6912BAC99A200C897FC /* AllNewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsCoordinator.swift; sourceTree = "<group>"; };
+		D660E6972BACA99C00C897FC /* NotificationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUseCase.swift; sourceTree = "<group>"; };
+		D660E69B2BACA9EE00C897FC /* NotificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCollectionViewCell.swift; sourceTree = "<group>"; };
+		D660E69C2BACA9EE00C897FC /* NotificationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCollectionViewCell.xib; sourceTree = "<group>"; };
+		D660E69F2BACA9F500C897FC /* NotificationsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSection.swift; sourceTree = "<group>"; };
+		D660E6A22BACAE0000C897FC /* NotificationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsCoordinator.swift; sourceTree = "<group>"; };
+		D660E6A42BACAE6700C897FC /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		D660E6A62BACAEFE00C897FC /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		D660E6AB2BACD00900C897FC /* NewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
+		D660E6AD2BACFF4600C897FC /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		D660E6AF2BACFF6600C897FC /* SavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
+		D660E6B12BAD00A200C897FC /* SavedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCoordinator.swift; sourceTree = "<group>"; };
 		D6B116682BA7806100017605 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B1166B2BA7806100017605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6B1166D2BA7806100017605 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +225,7 @@
 			children = (
 				D660E66C2BAB7ADD00C897FC /* NewViewController.swift */,
 				D660E66D2BAB7ADD00C897FC /* NewViewController.xib */,
+				D660E6AB2BACD00900C897FC /* NewViewModel.swift */,
 			);
 			path = New;
 			sourceTree = "<group>";
@@ -261,6 +284,51 @@
 				D660E68F2BAC8FD400C897FC /* AllNewsViewModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D660E6952BACA8AD00C897FC /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				D660E6962BACA95900C897FC /* Domain */,
+				D660E6992BACA9C200C897FC /* Presentation */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		D660E6962BACA95900C897FC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D660E6972BACA99C00C897FC /* NotificationsUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D660E6992BACA9C200C897FC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				D660E6A12BACAC5F00C897FC /* ViewModel */,
+				D660E69A2BACA9C900C897FC /* NotificationsSection */,
+				D660E6A62BACAEFE00C897FC /* NotificationsViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D660E69A2BACA9C900C897FC /* NotificationsSection */ = {
+			isa = PBXGroup;
+			children = (
+				D660E69B2BACA9EE00C897FC /* NotificationCollectionViewCell.swift */,
+				D660E69C2BACA9EE00C897FC /* NotificationCollectionViewCell.xib */,
+				D660E69F2BACA9F500C897FC /* NotificationsSection.swift */,
+			);
+			path = NotificationsSection;
+			sourceTree = "<group>";
+		};
+		D660E6A12BACAC5F00C897FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D660E6A42BACAE6700C897FC /* NotificationsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D6B1165F2BA7806100017605 = {
@@ -347,8 +415,10 @@
 				D6B1171D2BAA710100017605 /* AppCoordinator.swift */,
 				D6B1171B2BAA6F6600017605 /* TabBarCoordinator.swift */,
 				D6B117192BAA6F3100017605 /* HomeCoordinator.swift */,
+				D660E6A22BACAE0000C897FC /* NotificationsCoordinator.swift */,
 				D660E6732BAB846B00C897FC /* NewsDetailsCoordinator.swift */,
 				D660E6912BAC99A200C897FC /* AllNewsCoordinator.swift */,
+				D660E6B12BAD00A200C897FC /* SavedCoordinator.swift */,
 			);
 			path = Coordnator;
 			sourceTree = "<group>";
@@ -479,6 +549,7 @@
 				D6B116C92BA7840200017605 /* TabBarController */,
 				D6B116CB2BA7845100017605 /* Home */,
 				D6B116CC2BA7845400017605 /* Saved */,
+				D660E6952BACA8AD00C897FC /* Notifications */,
 				D6B116CD2BA7845900017605 /* Search */,
 				D6B116CE2BA7846700017605 /* Settings */,
 			);
@@ -510,6 +581,8 @@
 		D6B116CC2BA7845400017605 /* Saved */ = {
 			isa = PBXGroup;
 			children = (
+				D660E6AD2BACFF4600C897FC /* SavedViewController.swift */,
+				D660E6AF2BACFF6600C897FC /* SavedViewModel.swift */,
 			);
 			path = Saved;
 			sourceTree = "<group>";
@@ -767,6 +840,7 @@
 				D660E6812BAB98E800C897FC /* PoliticsCollectionViewCell.xib in Resources */,
 				D6B116B92BA7820300017605 /* Localizable.strings in Resources */,
 				D6B116782BA7806300017605 /* Assets.xcassets in Resources */,
+				D660E69E2BACA9EE00C897FC /* NotificationCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,6 +905,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6B117102BAA4C4600017605 /* Fonts.swift in Sources */,
+				D660E69D2BACA9EE00C897FC /* NotificationCollectionViewCell.swift in Sources */,
 				D6B116D62BA7B88E00017605 /* TabBarViewModel.swift in Sources */,
 				D6B1171E2BAA710100017605 /* AppCoordinator.swift in Sources */,
 				D6B116F22BA92E2500017605 /* NewsAPI.swift in Sources */,
@@ -850,15 +925,19 @@
 				D6B117222BAB403800017605 /* ExploreCollectionViewCell.swift in Sources */,
 				D660E66E2BAB7ADD00C897FC /* NewViewController.swift in Sources */,
 				D6B116E92BA8DF3900017605 /* BaseAPI.swift in Sources */,
+				D660E6AC2BACD00900C897FC /* NewViewModel.swift in Sources */,
 				D660E6782BAB8E7400C897FC /* TechCollectionViewCell.swift in Sources */,
 				D6B117012BAA47EB00017605 /* BreakingNewsSection.swift in Sources */,
 				D6B116D82BA7B88E00017605 /* TabBarType.swift in Sources */,
 				D6B1171C2BAA6F6600017605 /* TabBarCoordinator.swift in Sources */,
+				D660E6B22BAD00A300C897FC /* SavedCoordinator.swift in Sources */,
 				D6B117182BAA4DA500017605 /* HomeUseCase.swift in Sources */,
 				D6B117132BAA4D3700017605 /* HomeFactory.swift in Sources */,
 				D660E68E2BAC808A00C897FC /* AllNewsSection.swift in Sources */,
 				D6B116FA2BA9F9F900017605 /* BreakingNewsCollectionViewCell.swift in Sources */,
+				D660E6AE2BACFF4600C897FC /* SavedViewController.swift in Sources */,
 				D6B116762BA7806100017605 /* News.xcdatamodeld in Sources */,
+				D660E6982BACA99C00C897FC /* NotificationsUseCase.swift in Sources */,
 				D6B116FF2BAA472C00017605 /* UIImageView+Ext.swift in Sources */,
 				D6B116AE2BA781A100017605 /* +topMostViewController.swift in Sources */,
 				D660E68B2BAC7EBA00C897FC /* AllNewsCollectionViewCell.swift in Sources */,
@@ -866,11 +945,15 @@
 				D660E6802BAB98E800C897FC /* PoliticsCollectionViewCell.swift in Sources */,
 				D6B117252BAB412800017605 /* ExploreSection.swift in Sources */,
 				D6B116DA2BA7B88E00017605 /* TabBarViewControlle.swift in Sources */,
+				D660E6B02BACFF6600C897FC /* SavedViewModel.swift in Sources */,
 				D660E6902BAC8FD400C897FC /* AllNewsViewModel.swift in Sources */,
+				D660E6A02BACA9F500C897FC /* NotificationsSection.swift in Sources */,
 				D6B1166E2BA7806100017605 /* SceneDelegate.swift in Sources */,
 				D6B116C52BA7838B00017605 /* AppRouter.swift in Sources */,
 				D660E6722BAB82EB00C897FC /* String+Ext.swift in Sources */,
 				D660E6832BAB9B1300C897FC /* PoliticsSection.swift in Sources */,
+				D660E6A52BACAE6700C897FC /* NotificationsViewModel.swift in Sources */,
+				D660E6A72BACAEFE00C897FC /* NotificationsViewController.swift in Sources */,
 				D6B116B12BA781B800017605 /* SectionsLayout.swift in Sources */,
 				D6B116A62BA7815000017605 /* Collection+.swift in Sources */,
 				D6B1171A2BAA6F3100017605 /* HomeCoordinator.swift in Sources */,
@@ -878,6 +961,7 @@
 				D660E6922BAC99A200C897FC /* AllNewsCoordinator.swift in Sources */,
 				D6B116A82BA7816E00017605 /* UICollectionVeiw+Extension.swift in Sources */,
 				D6B116D72BA7B88E00017605 /* TabBar.swift in Sources */,
+				D660E6A32BACAE0000C897FC /* NotificationsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

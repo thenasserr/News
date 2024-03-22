@@ -11,7 +11,8 @@ protocol TabBarCoordinatorProtocol: Coordinator {
     func showTabBar()
     func hideTabBar()
     func showHome()
-    func showUpcoming()
+    func showSaved()
+    func showNotifications()
     func showSearch()
     func showDownload()
 }
@@ -28,7 +29,8 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
         router.navigationController.navigationBar.isHidden = true
         viewModel.viewControllers = [
             homeViewController(),
-            upcomingViewController(),
+            savedViewController(),
+            notificationsViewController(),
             searchViewController(),
             downloadViewController()
         ]
@@ -48,8 +50,12 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
         viewModel.selectedTab = .home
     }
     
-    func showUpcoming() {
-        
+    func showSaved() {
+        viewModel.selectedTab = .saved
+    }
+    
+    func showNotifications() {
+        viewModel.selectedTab = .notifications
     }
 
     func showSearch() {
@@ -68,8 +74,20 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
         return navigationController
     }
     
-    private func upcomingViewController() -> UIViewController {
-        return UIViewController()
+    private func savedViewController() -> UIViewController {
+        let navigationController = UINavigationController()
+        let router = AppRouter(navigationController: navigationController)
+        let coordinator = SavedCoordinator(router: router, tabBarCoordinator: self)
+        coordinator.showSaved()
+        return navigationController
+    }
+    
+    private func notificationsViewController() -> UIViewController {
+        let navigationController = UINavigationController()
+        let router = AppRouter(navigationController: navigationController)
+        let coordinator = NotificationsCoordinator(router: router, tabBarCoordinator: self)
+        coordinator.start()
+        return navigationController
     }
     
     private func searchViewController() -> UIViewController {

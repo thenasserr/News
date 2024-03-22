@@ -10,11 +10,15 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Bookmarks
+  internal static let bookmarks = L10n.tr("Localizable", "bookmarks", fallback: "Bookmarks")
   /// Localizable.strings
   ///   News
   /// 
   ///   Created by Ibrahim Nasser Ibrahim on 17/03/2024.
   internal static let home = L10n.tr("Localizable", "home", fallback: "Home")
+  /// Notifications
+  internal static let notifications = L10n.tr("Localizable", "notifications", fallback: "Notifications")
   internal enum Home {
     /// Breaking News
     internal static let breakingNews = L10n.tr("Localizable", "home.breakingNews", fallback: "Breaking News")

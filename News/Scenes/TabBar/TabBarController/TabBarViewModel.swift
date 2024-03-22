@@ -20,7 +20,7 @@ protocol PTabBarViewModelInterface: AnyObject {
 
 class PTabBarViewModel: ObservableObject, PTabBarViewModelInterface {
     static let shared = PTabBarViewModel()
-        
+    @Published var bookMarks: [Article] = []
     @Published var tabBarIsHidden: Bool = false
     var tabBarIsHiddenPublisher: Published<Bool>.Publisher { $tabBarIsHidden }
     

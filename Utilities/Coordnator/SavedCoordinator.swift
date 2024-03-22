@@ -1,20 +1,20 @@
 //
-//  AllNewsCoordinator.swift
+//  SavedCoordinator.swift
 //  News
 //
-//  Created by Ibrahim Nasser Ibrahim on 21/03/2024.
+//  Created by Ibrahim Nasser Ibrahim on 22/03/2024.
 //
 
 import Foundation
 
-protocol AllNewsCoordinatorProtocol: Coordinator {
-    func showAllNews(news: [Article], title: String)
+protocol SavedCoordinatorProtocol: Coordinator {
+    func showSaved()
     func showDetails(new: Article)
     func showTabBar()
     func hideTabBar()
 }
 
-class AllNewsCoordinator: AllNewsCoordinatorProtocol {
+class SavedCoordinator: SavedCoordinatorProtocol {
     var router: Router
     var tabBarCoordinator: TabBarCoordinator
     
@@ -35,9 +35,9 @@ class AllNewsCoordinator: AllNewsCoordinatorProtocol {
         
     }
     
-    func showAllNews(news: [Article], title: String) {
-        let viewModel = AllNewsViewModel(news: news, sectionTitle: title, coordinator: self)
-        let viewController = AllNewsViewController(viewModel: viewModel)
+    func showSaved() {
+        let viewModel = SavedViewModel(coordinator: self)
+        let viewController = SavedViewController(viewModel: viewModel)
         router.push(viewController)
     }
     

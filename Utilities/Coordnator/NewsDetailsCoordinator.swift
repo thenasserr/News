@@ -23,7 +23,8 @@ class NewsDetailsCoordinator: NewsDetailsCoordinatorProtocol {
     }
     
     func showDetails(new: Article) {
-        let viewController = NewViewController(news: new)
+        let viewModel = NewViewModel(article: new)
+        let viewController = NewViewController(viewModel: viewModel)
         router.push(viewController)
     }
 }

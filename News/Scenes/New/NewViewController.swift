@@ -11,7 +11,8 @@ class NewViewController: UIViewController {
 
     // MARK: - Properties
     let viewModel: NewViewModel
-    
+    var bookmarkButton: UIBarButtonItem!
+
     // MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var publishedDate: UILabel!
@@ -75,18 +76,17 @@ class NewViewController: UIViewController {
     }
     
     @objc func rightButtonAction() {
-        // Handle the action here
         viewModel.addToBookMarks()
+        updateBookMarksButtonUI()
     }
     
     @objc func anotherButtonAction() {
-        // Handle the action for the second button here
-        print("Another bar button item tapped")
+        viewModel.webSiteLinkTapped()
     }
     
     private func addingRightBarButtonItems() {
         navigationItem.backButtonTitle = ""
-        let bookmarkButton = UIBarButtonItem(
+        bookmarkButton = UIBarButtonItem(
             image: UIImage(systemName: "bookmark"),
             style: .done,
             target: self,
@@ -99,5 +99,13 @@ class NewViewController: UIViewController {
             action: #selector(anotherButtonAction))
         
         navigationItem.rightBarButtonItems = [bookmarkButton, linkButton]
+    }
+    
+    private func updateBookMarksButtonUI() {
+        if PTabBarViewModel.shared.bookMarks.contains(where: {$0 == viewModel.article }) {
+            bookmarkButton.tintColor = .nsecondarycolor
+        } else {
+            bookmarkButton.tintColor = .nlightcolor
+        }
     }
 }

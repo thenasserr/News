@@ -38,21 +38,21 @@ class PTabBarViewController: UITabBarController {
         .store(in: &cancellable)
         
         viewModel.tabBarIsHiddenPublisher
-                    .sink { [self] hidden in
-                        self.tabBarConstraints?.bottom?.constant = hidden ? 100 : 0
-
-                        UIView.animate(withDuration: 0.5) {
-                            self.view.layoutIfNeeded()
-
-                            if !hidden {
-                                self.pTabBar.isHidden = hidden
-                            }
-                        } completion: { _ in
-                            self.pTabBar.isHidden = hidden
-                        }
-
+            .sink { [self] hidden in
+                self.tabBarConstraints?.bottom?.constant = hidden ? 100 : 0
+                
+                UIView.animate(withDuration: 0.5) {
+                    self.view.layoutIfNeeded()
+                    
+                    if !hidden {
+                        self.pTabBar.isHidden = hidden
                     }
-                    .store(in: &cancellable)
+                } completion: { _ in
+                    self.pTabBar.isHidden = hidden
+                }
+                
+            }
+            .store(in: &cancellable)
     }
     
     private func setupFTapBar() {

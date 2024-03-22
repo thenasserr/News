@@ -5,14 +5,16 @@
 //  Created by Ibrahim Nasser Ibrahim on 21/03/2024.
 //
 
-import Foundation
+import UIKit
 
 class NewViewModel {
     
     var article: Article
+    var coordinator: NewsDetailsCoordinatorProtocol
     
-    init(article: Article) {
+    init(article: Article, coordinator: NewsDetailsCoordinatorProtocol) {
         self.article = article
+        self.coordinator = coordinator
     }
     
      func addToBookMarks() {
@@ -21,5 +23,11 @@ class NewViewModel {
         } else {
             PTabBarViewModel.shared.bookMarks.append(article)
         }
+    }
+    
+    func webSiteLinkTapped() {
+        guard let url = URL(string: article.url ?? "") else { return }
+        let request = URLRequest(url: url)
+        coordinator.showWebView(url: request)
     }
 }

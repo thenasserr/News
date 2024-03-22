@@ -11,7 +11,7 @@ struct NewsModelResponse: Codable {
     let articles: [Article]
 }
 
-struct Article: Codable {
+struct Article: Codable, Equatable {
     let source: Source
     let author: String?
     let title: String
@@ -20,7 +20,7 @@ struct Article: Codable {
     let urlToImage: String?
     let publishedAt: String
 }
-struct Source: Codable {
+struct Source: Codable, Equatable {
     let name: String
 }
 

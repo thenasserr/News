@@ -42,8 +42,7 @@ class AllNewsCoordinator: AllNewsCoordinatorProtocol {
     }
     
     func showDetails(new: Article) {
-        let viewModel = NewViewModel(article: new)
-        let viewController = NewViewController(viewModel: viewModel)
-        router.push(viewController)
+        let coordinator = NewsDetailsCoordinator(router: router, tabBarCoordinator: tabBarCoordinator)
+        coordinator.showDetails(new: new)
     }
 }

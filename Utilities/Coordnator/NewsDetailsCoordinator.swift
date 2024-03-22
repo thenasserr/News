@@ -9,13 +9,16 @@ import Foundation
 
 protocol NewsDetailsCoordinatorProtocol: Coordinator {
     func showDetails(new: Article)
+    func showWebView(url: URLRequest)
 }
 
 class NewsDetailsCoordinator: NewsDetailsCoordinatorProtocol {
     var router: Router
-    
-    init(router: Router) {
+    var tabBarCoordinator: TabBarCoordinator
+
+    init(router: Router, tabBarCoordinator: TabBarCoordinator) {
         self.router = router
+        self.tabBarCoordinator = tabBarCoordinator
     }
     
     func start() {
@@ -23,8 +26,13 @@ class NewsDetailsCoordinator: NewsDetailsCoordinatorProtocol {
     }
     
     func showDetails(new: Article) {
-        let viewModel = NewViewModel(article: new)
+        let viewModel = NewViewModel(article: new, coordinator: self)
         let viewController = NewViewController(viewModel: viewModel)
         router.push(viewController)
+    }
+    
+    func showWebView(url: URLRequest) {
+       let coordinator = WebViewCoordinator(router: router, tabBarCoordinator: tabBarCoordinator)
+        coordinator.showWebView(url: url)
     }
 }

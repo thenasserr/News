@@ -46,7 +46,7 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     }
     
     func showDetails(new: Article) {
-        let coordinator = NewsDetailsCoordinator(router: router)
+        let coordinator = NewsDetailsCoordinator(router: router, tabBarCoordinator: tabBarCoordinator)
         coordinator.showDetails(new: new)
     }
     

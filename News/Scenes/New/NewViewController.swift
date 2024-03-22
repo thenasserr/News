@@ -10,7 +10,7 @@ import UIKit
 class NewViewController: UIViewController {
 
     // MARK: - Properties
-    var news: Article
+    let viewModel: NewViewModel
     
     // MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,8 +21,8 @@ class NewViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     // MARK: - Initialization
-    init(news: Article) {
-        self.news = news
+    init(viewModel: NewViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,6 +39,7 @@ class NewViewController: UIViewController {
     
     // MARK: - Private Methods
     private func showNewsDetails() {
+        let news = viewModel.article
         nameLabel.text = news.source.name
         publishedDate.text = news.publishedAt.convertDateStringToDate()
         titleLabel.text = news.title
@@ -75,7 +76,7 @@ class NewViewController: UIViewController {
     
     @objc func rightButtonAction() {
         // Handle the action here
-        print("Right bar button item tapped")
+        viewModel.addToBookMarks()
     }
     
     @objc func anotherButtonAction() {

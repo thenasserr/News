@@ -9,6 +9,13 @@ import Foundation
 
 protocol HomeUseCaseProtocol {
     func getSectionLayouts(delegate: HomeSectionsDelegate) async throws -> [any SectionsLayout]
+    func getPoliticsNews() async throws -> NewsModelResponse?
+    func getTechNews() async throws -> NewsModelResponse?
+    func getSportsNews() async throws -> NewsModelResponse?
+    func getFinanceNews() async throws -> NewsModelResponse?
+    func getCinemaNews() async throws -> NewsModelResponse?
+    func getFashionNews() async throws -> NewsModelResponse?
+    func getArtsNews() async throws -> NewsModelResponse?
 }
 
 class HomeUseCase: HomeUseCaseProtocol {
@@ -49,5 +56,33 @@ class HomeUseCase: HomeUseCaseProtocol {
             sections.append(layout)
         }
         return sections
+    }
+    
+    func getPoliticsNews() async throws -> NewsModelResponse? {
+        try await newsAPI.politicsNews()
+    }
+    
+    func getTechNews() async throws -> NewsModelResponse? {
+        try await newsAPI.techNews()
+    }
+    
+    func getSportsNews() async throws -> NewsModelResponse? {
+        try await newsAPI.sportsNews()
+    }
+    
+    func getFinanceNews() async throws -> NewsModelResponse? {
+        try await newsAPI.notifications()
+    }
+    
+    func getCinemaNews() async throws -> NewsModelResponse? {
+        try await newsAPI.cinemaNews()
+    }
+    
+    func getFashionNews() async throws -> NewsModelResponse? {
+        try await newsAPI.fashionNews()
+    }
+    
+    func getArtsNews() async throws -> NewsModelResponse? {
+        try await newsAPI.artNews()
     }
 }

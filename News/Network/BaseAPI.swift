@@ -13,10 +13,12 @@ enum Errors: Error {
     case invalidQuery
     case invalidURL
     case failedToGetData
+    case failedToCreateRequest
 }
 
 protocol BaseAPI {
     func fetchNews<T>(request: APIRequest, type: T.Type) async throws -> T where T: Decodable
+    func search<T>(request: APIRequest, type: T.Type) async throws -> T where T: Decodable
 }
 
 extension BaseAPI {
@@ -34,5 +36,22 @@ extension BaseAPI {
             throw Errors.invalidDecoding
         }
         return decodedData
+    }
+    
+    func search<T>(request: APIRequest, type: T.Type) async throws -> T where T: Decodable {
+        guard let url = request.searchUrl else {
+            throw Errors.failedToCreateRequest
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = request.httpMethod
+        print(urlRequest)
+        do {
+            let (data, _) = try await URLSession.shared.data(for: urlRequest)
+            let result = try JSONDecoder().decode(type.self, from: data)
+            return result
+        } catch {
+            throw Errors.failedToGetData
+        }
     }
 }

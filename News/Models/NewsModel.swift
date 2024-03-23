@@ -31,14 +31,24 @@ struct Explore: Codable {
 
 extension Explore {
     static let mockData: [Explore]? = [
-        .init(title: "Politics", image: "explore/1"),
-        .init(title: "Tech", image: "explore/2"),
-        .init(title: "Sport", image: "explore/3"),
-        .init(title: "Finance", image: "explore/4"),
+        .init(title: "POLITICS", image: "explore/1"),
+        .init(title: "TECH", image: "explore/2"),
+        .init(title: "SPORTS", image: "explore/3"),
+        .init(title: "FINANCE", image: "explore/4"),
         .init(title: "Business", image: "explore/5"),
-        .init(title: "Fashion", image: "explore/6"),
-        .init(title: "Health", image: "explore/7"),
-        .init(title: "Crypto", image: "explore/8"),
-        .init(title: "Entert", image: "explore/9")
+        .init(title: "FASHION", image: "explore/6"),
+        .init(title: "CINEMA", image: "explore/7"),
+        .init(title: "GAMING", image: "explore/8"),
+        .init(title: "ARTS", image: "explore/9")
     ]
+}
+
+enum NewsCategory {
+    case politics
+    case tech
+    case sports
+    case finance
+    case cinema
+    case fashion
+    case art
 }

@@ -14,6 +14,7 @@ class NewViewController: UIViewController {
     var bookmarkButton: UIBarButtonItem!
 
     // MARK: - IBOutlets
+    @IBOutlet weak var labelBackgroundView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var publishedDate: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -59,7 +60,7 @@ class NewViewController: UIViewController {
     }
     
     private func configureHeadersUI() {
-        nameLabel.backgroundColor = .nsecondarycolor
+        labelBackgroundView.backgroundColor = .nsecondarycolor
         nameLabel.textColor = .white
         nameLabel.font = .medium
         nameLabel.layer.cornerRadius = 4
@@ -104,8 +105,10 @@ class NewViewController: UIViewController {
     private func updateBookMarksButtonUI() {
         if PTabBarViewModel.shared.bookMarks.contains(where: {$0 == viewModel.article }) {
             bookmarkButton.tintColor = .nsecondarycolor
+            bookmarkButton.image = UIImage(systemName: "bookmark.fill")
         } else {
-            bookmarkButton.tintColor = .nlightcolor
+            bookmarkButton.tintColor = .darkGray
+            bookmarkButton.image = UIImage(systemName: "bookmark")
         }
     }
 }

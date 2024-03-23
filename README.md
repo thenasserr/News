@@ -18,24 +18,23 @@ Installation:
 3. Choose the target you want to run on your device/simulator.
 4. Build and run the project.
 
-Architecture:
-- Clean Architecture: Separation into Domain, Data, and Presentation layers.
-- Domain Layer: Core business logic and entities.
-- Data Layer: Data access and manipulation.
-- Presentation Layer: UI-related logic and user interactions.
-
-Concurrency:
-- Utilizes modern concurrency techniques for efficient asynchronous operations.
-
-Reactive Programming:
-- Implements reactive programming with the Combine framework.
-
-Design Patterns:
-- Incorporates the Factory design pattern for creating objects.
-
+## Tech Used
+* Clean architecture
+* Designed with MVVM pattern
+* Combine
+* Modern concurrency
+* Generic API requests and search
+* Image Caching with NSCache
+* Coordinator
+* Router
+* CollectionView Compositional Layout
+* UIKit with Xib
+* WebView and ProgressView
+* Auto layout 
+* Customized Tab Bar
+* Date Formatter
+* View animations
 ---
-
-This summary highlights the key aspects of your Global News App, including its features, architecture, requirements, installation process, and licensing information. Adjust as necessary to fit the specifics of your project.
 
 ## Screenshots
 <img src="https://github.com/thenasserr/News/assets/125792463/3d84514b-7710-432e-abc1-75b7cfd2d954" width="330" height="700">

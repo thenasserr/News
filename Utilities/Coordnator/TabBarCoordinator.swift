@@ -14,7 +14,6 @@ protocol TabBarCoordinatorProtocol: Coordinator {
     func showSaved()
     func showNotifications()
     func showSearch()
-    func showDownload()
 }
 
 final class TabBarCoordinator: TabBarCoordinatorProtocol {
@@ -30,9 +29,8 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
         viewModel.viewControllers = [
             homeViewController(),
             savedViewController(),
-            notificationsViewController(),
             searchViewController(),
-            downloadViewController()
+            notificationsViewController()
         ]
         let viewControler = PTabBarViewController(viewModel: viewModel)
         router.push(viewControler)
@@ -59,11 +57,7 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
     }
 
     func showSearch() {
-        
-    }
-    
-    func showDownload() {
-        
+        viewModel.selectedTab = .search
     }
     
     private func homeViewController() -> UIViewController {
@@ -91,10 +85,10 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
     }
     
     private func searchViewController() -> UIViewController {
-        return UIViewController()
-    }
-    
-    private func downloadViewController() -> UIViewController {
-        return UIViewController()
+        let navigationController = UINavigationController()
+        let router = AppRouter(navigationController: navigationController)
+        let coordinator = SearchCoordinator(router: router, tabBarCoordinator: self)
+        coordinator.start()
+        return navigationController
     }
 }

@@ -19,6 +19,8 @@ internal enum L10n {
   internal static let home = L10n.tr("Localizable", "home", fallback: "Home")
   /// Notifications
   internal static let notifications = L10n.tr("Localizable", "notifications", fallback: "Notifications")
+  /// Search
+  internal static let search = L10n.tr("Localizable", "search", fallback: "Search")
   internal enum Home {
     /// Breaking News
     internal static let breakingNews = L10n.tr("Localizable", "home.breakingNews", fallback: "Breaking News")

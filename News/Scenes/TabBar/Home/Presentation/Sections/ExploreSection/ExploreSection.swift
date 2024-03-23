@@ -9,7 +9,7 @@ import UIKit
 import ViewAnimator
 
 protocol ExploreSectionDelegate: AnyObject {
-    func exploreSection(_ section: ExploreSection, didSelect item: Explore)
+    func exploreSection(_ section: ExploreSection, didSelect item: Explore, at indexPath: IndexPath)
 }
 
 class ExploreSection: SectionsLayout {
@@ -81,7 +81,7 @@ class ExploreSection: SectionsLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = items[indexPath.item]
-        delegate?.exploreSection(self, didSelect: item)
+        delegate?.exploreSection(self, didSelect: item, at: indexPath)
     }
     
     func collectionView(

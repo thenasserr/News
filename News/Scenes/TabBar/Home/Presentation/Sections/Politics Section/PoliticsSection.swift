@@ -100,7 +100,7 @@ class PoliticsSection: SectionsLayout {
             return UICollectionReusableView()
         }
         header.setupHeaderTitle(title: sectionHeaderTitle)
-        header.setupHeaderButtonTitle(buttonTitle: "See All")
+        header.setupHeaderButtonTitle(buttonTitle: "more")
         header.setupHeaderCount(count: "\(items.count - 15)")
         header.delegate = self
         return header

@@ -97,7 +97,7 @@ class BreakingNewsSection: SectionsLayout {
             return UICollectionReusableView()
         }
         header.setupHeaderTitle(title: sectionHeaderTitle)
-        header.setupHeaderButtonTitle(buttonTitle: "See All")
+        header.setupHeaderButtonTitle(buttonTitle: "more")
         header.setupHeaderCount(count: "\(items.count - 6)")
         header.delegate = self
         return header

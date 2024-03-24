@@ -13,16 +13,12 @@ class SearchViewController: UICollectionViewController {
 
     var viewModel: SearchViewModel
         
-    private let searchController: UISearchController = {
-        let controller = UISearchController(searchResultsController: SearchResultsViewController())
-        controller.searchBar.placeholder = "Search"
-        controller.searchBar.searchBarStyle = .minimal
-        return controller
-    }()
+    private let searchController: UISearchController
     
     // MARK: - Initializers
     init(viewModel: SearchViewModel) {
         self.viewModel = viewModel
+        searchController = viewModel.getSearchResultController()
         super.init(collectionViewLayout: .init())
     }
     

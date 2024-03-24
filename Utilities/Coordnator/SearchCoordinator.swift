@@ -5,10 +5,11 @@
 //  Created by Ibrahim Nasser Ibrahim on 23/03/2024.
 //
 
-import Foundation
+import UIKit
 
 protocol SearchCoordinatorProtocol: Coordinator {
     func showSearch()
+    func getSearchResultViewController() -> UISearchController
     func showDetails(new: Article)
     func showTabBar()
     func hideTabBar()
@@ -40,6 +41,14 @@ class SearchCoordinator: SearchCoordinatorProtocol {
         let viewModel = SearchViewModel(useCase: useCase, coordinator: self)
         let viewController = SearchViewController(viewModel: viewModel)
         router.push(viewController)
+    }
+    
+    func getSearchResultViewController() -> UISearchController {
+        let viewModel = SearchResultViewModel(coordinator: self)
+        let controller = UISearchController(searchResultsController: SearchResultsViewController(viewModel: viewModel))
+        controller.searchBar.placeholder = "Search"
+        controller.searchBar.searchBarStyle = .minimal
+        return controller
     }
     
     func showDetails(new: Article) {

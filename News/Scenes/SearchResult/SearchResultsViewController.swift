@@ -15,9 +15,11 @@ class SearchResultsViewController: UICollectionViewController {
     
     // MARK: - Properties
     var news: [Article] = []
+    var viewModel: SearchResultViewModel
     
     // MARK: - Initializers
-    init() {
+    init(viewModel: SearchResultViewModel) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
     }
     
@@ -81,6 +83,6 @@ class SearchResultsViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = news[indexPath.row]
-        print(item)
+        viewModel.showDetails(new: item)
     }
 }
